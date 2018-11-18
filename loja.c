@@ -2,7 +2,26 @@
 
 int main(){
 
+
+    struct produto{
+
+    char nome[30];
+    char marca[50];
+    float preco;
+    int quantidade;
+
+};
+
+struct produto p;
+
     int escolha;
+
+    FILE *estoque;
+
+    estoque = fopen("estoque.txt", "w");
+
+     system("clear");
+
 
 
 puts("╔═╗┌─┐┌┐┌┌┬┐┬─┐┌─┐┬  ┌─┐  ┌┬┐┌─┐  ╔═╗┌─┐┌┬┐┌─┐┌─┐ ┬ ┬┌─┐");
@@ -44,6 +63,54 @@ puts("\n");
 
     puts("Escolha:");
     scanf("%d",&escolha1);
+
+
+
+    switch (escolha1){
+
+        case 1:
+        system("clear");
+        puts("Nome:");
+        scanf("%s",p.nome);
+        fprintf(estoque, " Nome: %s | ", p.nome);
+
+        puts("Marca:");
+        scanf("%s",p.marca);
+        fprintf(estoque, "Marca: %s | ", p.marca);
+
+        puts("preço:");
+        scanf("%f",&p.preco);
+        fprintf(estoque, "Preço: %0.2f | ", p.preco);
+
+        puts("Quantidade:");
+        scanf("%d",&p.quantidade);
+        fprintf(estoque, "Quantidade: %d", p.quantidade);
+        
+  
+        fclose(estoque);
+
+
+        break;
+
+
+         case 2:
+
+         estoque = fopen("estoque.txt", "r");
+
+         while(fgets(p.nome, 30, estoque) != NULL)
+         printf("%s", p.nome);
+  
+         fclose(estoque);
+       
+         break;
+
+
+        
+
+    }
+      
+    
+
     
     break;
 
@@ -95,6 +162,8 @@ puts("\n");
    
 
    }
+
+   
 
     return 0;
 }
