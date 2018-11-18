@@ -1,1 +1,2 @@
- Nome: Refri | Marca: Coca | Preço: 4.25 | Quantidade: 15
+[1] Nome: vfdfvdf | Marca: bdfbdf | Preço: 5.00 | Quantidade: 3
+[2] Nome: fsdfsdf | Marca: fsdfsd | Preço: 8.00 | Quantidade: 6

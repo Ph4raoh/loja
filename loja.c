@@ -16,6 +16,10 @@ struct produto p;
 
     int escolha;
 
+    int escolha2;
+
+    int x = 1; 
+
     FILE *estoque;
 
     estoque = fopen("estoque.txt", "w");
@@ -68,11 +72,18 @@ puts("\n");
 
     switch (escolha1){
 
+        
+
         case 1:
+
+        
+
+        while(x != 0){
+            
         system("clear");
         puts("Nome:");
         scanf("%s",p.nome);
-        fprintf(estoque, " Nome: %s | ", p.nome);
+        fprintf(estoque, "[%d] Nome: %s | ",x,p.nome);
 
         puts("Marca:");
         scanf("%s",p.marca);
@@ -84,9 +95,23 @@ puts("\n");
 
         puts("Quantidade:");
         scanf("%d",&p.quantidade);
-        fprintf(estoque, "Quantidade: %d", p.quantidade);
+        fprintf(estoque, "Quantidade: %d\n", p.quantidade);
+
+        puts("");
+
+         puts("Cadastrar mais? 1 = Sim || 2 = Não");
+
+        scanf("%d",&escolha2);
+
+        if(escolha2 == 1){
+        x++;
+        }
+        if(escolha2 == 2){
+            x = 0;
+        }
+
+        }
         
-  
         fclose(estoque);
 
 
