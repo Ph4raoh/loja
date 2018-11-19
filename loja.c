@@ -2,6 +2,10 @@
 
 int main(){
 
+    int con = 1;
+
+    while(con = 1){
+
 
     struct produto{
 
@@ -18,14 +22,14 @@ struct produto p;
 
     int escolha2;
 
-    int x = 1; 
+    int x = 1;
+    int z,q,r;
 
     FILE *estoque;
 
     estoque = fopen("estoque.txt", "a");
 
      system("clear");
-
 
 
 puts("╔═╗┌─┐┌┐┌┌┬┐┬─┐┌─┐┬  ┌─┐  ┌┬┐┌─┐  ╔═╗┌─┐┌┬┐┌─┐┌─┐ ┬ ┬┌─┐");
@@ -39,6 +43,8 @@ puts("\n");
   puts("[2] - Compras de produtos\n");
   puts("[3] - Vendas de produtos\n");
 
+
+   puts("Escolha:");
    scanf("%d",&escolha);
 
 
@@ -68,34 +74,37 @@ puts("\n");
     puts("Escolha:");
     scanf("%d",&escolha1);
 
-
-
     switch (escolha1){
 
         
-
         case 1:
 
         
-
         while(x != 0){
+
+fprintf(estoque,"=========================================================================\n");
             
         system("clear");
         puts("Nome:");
         scanf("%s",p.nome);
+        puts("");
         fprintf(estoque, "Nome: %s | ",p.nome);
 
         puts("Marca:");
         scanf("%s",p.marca);
+        puts("");
         fprintf(estoque, "Marca: %s | ", p.marca);
 
         puts("preço:");
         scanf("%f",&p.preco);
+        puts("");
         fprintf(estoque, "Preço: %0.2f | ", p.preco);
 
         puts("Quantidade:");
         scanf("%d",&p.quantidade);
         fprintf(estoque, "Quantidade: %d\n", p.quantidade);
+
+         
 
         puts("");
 
@@ -114,7 +123,6 @@ puts("\n");
         
         fclose(estoque);
 
-
         break;
 
 
@@ -123,11 +131,55 @@ puts("\n");
          system("clear");
 
          estoque = fopen("estoque.txt", "r");
-
+        
          while(fgets(p.nome, 30, estoque) != NULL)
          printf("%s", p.nome);
-  
+
          fclose(estoque);
+
+        puts("\nPrecione 1 para voltar ao menu...");
+
+        scanf("%d",&x);
+
+        if(x == 0){
+            break;
+        }
+
+         
+         break;
+     
+        case 3:
+         
+         system("clear");
+         
+        puts("\nEm construção...");
+
+        puts("\nPrecione 1 para voltar ao menu...");
+
+        scanf("%d",&z);
+
+        if(z == 0){
+            break;
+        }
+        break;
+
+         case 4:
+
+         system("clear");
+
+         estoque = fopen("estoque.txt", "a");
+
+         fclose(estoque);
+
+         puts("\nSalvo com sucesso!");
+
+         puts("\nPrecione 1 para voltar ao menu...");
+
+        scanf("%d",&q);
+
+        if(q == 0){
+            break;
+        }
        
          break;
 
@@ -140,17 +192,19 @@ puts("\n");
          fclose(estoque);
 
          puts("\nApagado com sucesso!");
+
+         puts("\nPrecione 1 para voltar ao menu...");
+
+        scanf("%d",&r);
+
+        if(r == 0){
+            break;
+        }
        
          break;
 
-
-        
-
     }
-      
-    
-
-    
+          
     break;
 
     /***********************************************************/
@@ -202,6 +256,7 @@ puts("\n");
 
    }
 
+}
    
 
     return 0;
