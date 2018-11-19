@@ -22,7 +22,7 @@ struct produto p;
 
     FILE *estoque;
 
-    estoque = fopen("estoque.txt", "w");
+    estoque = fopen("estoque.txt", "a");
 
      system("clear");
 
@@ -83,7 +83,7 @@ puts("\n");
         system("clear");
         puts("Nome:");
         scanf("%s",p.nome);
-        fprintf(estoque, "[%d] Nome: %s | ",x,p.nome);
+        fprintf(estoque, "Nome: %s | ",p.nome);
 
         puts("Marca:");
         scanf("%s",p.marca);
@@ -120,12 +120,26 @@ puts("\n");
 
          case 2:
 
+         system("clear");
+
          estoque = fopen("estoque.txt", "r");
 
          while(fgets(p.nome, 30, estoque) != NULL)
          printf("%s", p.nome);
   
          fclose(estoque);
+       
+         break;
+
+          case 5:
+
+         system("clear");
+
+         estoque = fopen("estoque.txt", "w");
+  
+         fclose(estoque);
+
+         puts("\nApagado com sucesso!");
        
          break;
 
